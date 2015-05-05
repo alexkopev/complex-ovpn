@@ -1,0 +1,11 @@
+Package: complex-ovpn
+Version: 1.0.1
+Provides: complex-ovpn
+Description: Комплексная система для построения VPN сетей в гетерогенных средах.
+ На базе OpenVPN.
+ С интерфейсом на GTK3+.
+Architecture: all
+Section: admin
+Maintainer: alexkopiev@mail.ru
+Depends: openvpn (>=2.3.2), easy-rsa (>=2.2.2-1), libgtk-3-0 (>=3.10), python3 (>=3.2), python3-gi (>=3.2), gksu (>=2.0.2)
+

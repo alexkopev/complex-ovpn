@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+
+import sys, os
+sys.path.append('/usr/share/complex-ovpn')
+os.chdir('/usr/share/complex-ovpn')
+import conf_ovpn
+conf_ovpn._main()
+
+
