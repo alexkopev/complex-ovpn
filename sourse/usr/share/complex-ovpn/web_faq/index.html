@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Complex Config OpenVPN</title>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+		<section id="body" class="width">
+			<aside id="sidebar">
+
+			<header>
+				<h1><a href="#">Конфигуратор OpenVPN</a></h1>
+
+				<h2>Complex Config OpenVPN</h2>
+				
+			</header>
+
+			<nav id="mainnav">
+  				<ul>
+                    <li class="selected-item"><a href="index.html">Главная</a></li>
+                    <li><a href="windows.html">Настройка клиента на Windows</a></li>
+                    <li><a href="linux.html">Настройка клиента на Linux</a></li>
+                    <li><a href="macos.html">Настройка клиента на MacOS</a></li>
+                    <li><a href="management.html">Менеджмент подключенных клиентов</a></li>
+                </ul>
+			</nav>
+
+			
+			
+			</aside>
+			<section id="content">
+                		
+	    <article>
+				
+			
+        <h2>Инструкция пользователя</h2><br><br>
+            <p>Запуск программы производится из пункта меню "Системные" или из консоли, посредством выполнения команды - <strong>sudo complex-ovpn</strong></p>
+            <center><img src="img/001.png" width="500px"></center><br>
+            <p>Первым этапом нужно выполнить пункты меню "Сервер OpenVPN" такие, как: "Парамметры организации", затем "Первоначальная настройка сервера".</p>
+            <center><img src="img/002.png" width="500px"></center><br>
+            <p>В окне "Парамметры организации" необходимо заполнить все поля на английской раскладке. Поля "Страна" и "Субъект" заполняются двумя буквами в верхнем регистре (в примере "RU" - Россия, "MO" - Московская область.</p>
+            <center><img src="img/003.png" width="450px"></center><br>
+            <p>При выполнении пункта меню "Первоначальная настройка сервера" выполняется подготовка системных каталогов, установка собственного центра сертификациии (CA), создания файла Диффи-Хелмана, а также, генерация ключа и сертификата сервера.</p>
+            <p>Следующим этапом необходимо выполнить пункт "Сервер OpenVPN" -- "Конфигурация сервера". После нажатия появляется новое окно, в котором нужно задать парамметры конфигурацмонного файла сервера (также, по указанным здесь параметрам формируется файл-шаблон конфигурации клиентов).</p>
+            <center><img src="img/004.png" width="450px"></center><br>
+            <p>Далее можно заводить клиентов в "Управление клиентами" -- "Администрирование клиентов"</p>
+            <center><img src="img/005.png" width="450px"></center><br>
+            <p>Для того, чтобы скачать конфигурационные файлы для клиентов, зайдите в "Управление клиентами" -- "Скачать конфигурационные файлы".</p>
+            <center><img src="img/006.png" width="800px"></center><br>
+            <p>Для отзыва сертификата клиента OpenVPN зайдите в "Управление клиентами" -- "Администрирование клиентов" и снимите галочку напротив имени клиента, сертификат которого требуется отозвать.</p>
+            <center><img src="img/007.png" width="800px"></center><br>
+            <p>Связь с разработчиком: <strong>alexkopiev@mail.ru</strong></p><br><br>
+
+
+		</article>
+        <br><br><br><br>
+			<footer class="clear">
+				<p>&copy;Alexandr Kopev 2015. <a href="https://github.com/alexkopev/complex-ovpn">The developer's page </a> </p>
+			</footer>
+
+		</section>
+
+		<div class="clear"></div>
+
+	</section>
+	
+
+</body>
+</html>

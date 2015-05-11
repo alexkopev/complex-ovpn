@@ -11,4 +11,4 @@ Type=Application
 Categories=GNOME;System;Filesystem;Settings;
 StartupNotify=true
 X-Ubuntu-Gettext-Domain=Complex Config OpenVPN
-Name[ru_RU]=Комплексный конфигуратор OpenVPN
+Name[ru_RU]=Complex Config OpenVPN

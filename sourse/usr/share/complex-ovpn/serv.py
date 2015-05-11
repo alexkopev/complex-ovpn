@@ -132,7 +132,7 @@ def revoke_cert(client_name):
     os.remove ('/etc/openvpn/ccd/'+client_name+'.key')
     os.chdir(proj_folder)
 
-def server_config_file(port, proto):
+def server_config_file(port, proto, ip = 0, mask = 0):
     serv_config = []
     serv_config.append('port ' + port)
     serv_config.append('proto ' + proto)
@@ -143,6 +143,9 @@ def server_config_file(port, proto):
     serv_config.append('dh /etc/openvpn/keys/dh2048.pem')
     serv_config.append('server 10.8.0.0 255.255.255.0')
     serv_config.append('client-config-dir /etc/openvpn/ccd')
+    serv_config.append('ifconfig-pool-persist ipp.txt')
+    if ip and mask:
+        serv_config.append('push "route ' + ip + ' ' + mask + "\"")
     serv_config.append('keepalive 10 120')
     serv_config.append('management localhost 7777')
     serv_config.append('comp-lzo')
@@ -211,11 +214,12 @@ def Windows_client_conf (client_name):
     f_read = open('/etc/openvpn/ccd/'+client_name+'/openvpn_client.conf').readlines()
     f_write = open('/etc/openvpn/ccd/'+client_name+'/openvpn_client.conf', "w")
     for string in f_read:
+        string_new = string + "\r\n"
         if string.find("user nobody") != -1:
-            string = string.replace("user nobody\n", "")
+            string_new = string.replace("user nobody\n", "")
         if string.find("group nogroup") != -1:
-            string = string.replace("group nogroup\n", "")
-        f_write.write(string)
+            string_new = string.replace("group nogroup\n", "")
+        f_write.write(string_new)
     f_write.close()
     os.rename('/etc/openvpn/ccd/'+client_name+'/openvpn_client.conf','/etc/openvpn/ccd/'+client_name+'/openvpn_client.ovpn')
 

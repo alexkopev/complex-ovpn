@@ -189,6 +189,7 @@ PayPal - alexkopiev@mail.ru
                         <property name="use_underline">True</property>
                         <property name="image">image2</property>
                         <property name="use_stock">False</property>
+                        <signal name="activate" handler="configuring_clients" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -229,22 +230,27 @@ PayPal - alexkopiev@mail.ru
     </child>
   </object>
   <object class="GtkWindow" id="window_serv_conf">
+    <property name="width_request">500</property>
     <property name="can_focus">False</property>
+    <property name="halign">center</property>
+    <property name="valign">center</property>
     <property name="title" translatable="yes">Конфигурационный файл сервера</property>
     <property name="resizable">False</property>
     <property name="modal">True</property>
     <property name="window_position">center</property>
-    <property name="default_width">400</property>
-    <property name="default_height">170</property>
+    <property name="default_width">500</property>
     <property name="icon">icon.png</property>
+    <property name="gravity">center</property>
     <signal name="delete-event" handler="window_serv_conf_close" swapped="no"/>
     <child>
       <object class="GtkGrid" id="grid_server_configuration">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">center</property>
+        <property name="valign">center</property>
         <property name="margin_left">5</property>
         <property name="margin_right">5</property>
-        <property name="margin_top">10</property>
+        <property name="margin_top">9</property>
         <property name="column_spacing">2</property>
         <property name="row_homogeneous">True</property>
         <child>
@@ -346,10 +352,59 @@ PayPal - alexkopiev@mail.ru
           </object>
           <packing>
             <property name="left_attach">1</property>
+            <property name="top_attach">5</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entry_ip">
+            <property name="visible">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">True</property>
+            <property name="placeholder_text" translatable="yes">ip - адрес подсети за сервером</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">4</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entry_mask">
+            <property name="visible">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">True</property>
+            <property name="placeholder_text" translatable="yes">маска подсети за сервером</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">4</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="checkbutton_route">
+            <property name="label" translatable="yes">Маршруты в сеть за сервером</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="margin_left">42</property>
+            <property name="xalign">0</property>
+            <property name="draw_indicator">True</property>
+            <signal name="toggled" handler="on_checkbutton_route" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
             <property name="top_attach">3</property>
             <property name="width">1</property>
             <property name="height">1</property>
           </packing>
+        </child>
+        <child>
+          <placeholder/>
         </child>
         <child>
           <placeholder/>
@@ -361,13 +416,17 @@ PayPal - alexkopiev@mail.ru
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Парамметры организации</property>
     <property name="modal">True</property>
-    <property name="default_width">350</property>
+    <property name="window_position">center</property>
+    <property name="default_width">460</property>
     <property name="icon">icon.png</property>
+    <property name="gravity">center</property>
     <signal name="delete-event" handler="window_serv_param_close" swapped="no"/>
     <child>
       <object class="GtkGrid" id="grid3">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">center</property>
+        <property name="valign">center</property>
         <child>
           <object class="GtkEntry" id="entry5">
             <property name="visible">True</property>

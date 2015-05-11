@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Complex Config OpenVPN</title>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+		<section id="body" class="width">
+			<aside id="sidebar">
+
+			<header>
+				<h1><a href="#">Конфигуратор OpenVPN</a></h1>
+
+				<h2>Complex Config OpenVPN</h2>
+				
+			</header>
+
+			<nav id="mainnav">
+  				<ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="windows.html">Настройка клиента на Windows</a></li>
+                    <li><a href="linux.html">Настройка клиента на Linux</a></li>
+                    <li><a href="macos.html">Настройка клиента на MacOS</a></li>
+                    <li class="selected-item"><a href="management.html">Менеджмент подключенных клиентов</a></li>
+                </ul>
+			</nav>
+
+			
+			
+			</aside>
+			<section id="content" style= "width:80%">
+                		
+	    <article>
+				
+			
+        <h2>Управление подключенными клиентами</h2><br><br>
+        <p>Для управления подключенными клиентами наберите в терминале команду <strong>telnet localhost 7777</strong></p>
+        <center><img src="img/301.png" width="550px"></center><br>
+        <p>Для отображения списка всех подключений введите команду <strong>status</strong></p>
+        <center><img src="img/302.png" width="550px"></center><br>
+        <p>Чтобы отключить нужного вам пользователя, введите <strong>kill имя_клиента</strong> (в примере - <strong>client_linux</strong>). Сеанс будет отключен до перезапуска OpenVPN-сервера.</p>
+        <center><img src="img/303.png" width="550px"></center><br>
+        <p>Для отображения списка всех возможных команд введите <strong>help</strong></p>
+        <center><img src="img/304.png" width="550px"></center><br>
+		</article>
+        <br><br><br><br>
+			<footer class="clear">
+				<p>&copy;Alexandr Kopev 2015. <a href="https://github.com/alexkopev/complex-ovpn">The developer's page </a> </p>
+			</footer>
+
+		</section>
+
+		<div class="clear"></div>
+
+	</section>
+	
+
+</body>
+</html>

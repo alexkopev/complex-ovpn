@@ -28,7 +28,6 @@ class GUI_glade():
         Gtk.main_quit()
 
     def create_keys_server (self, window, *args):       #Создание ключей сервера
-        #~ self.main_gui()
         dialog = Gtk.MessageDialog(window, 0, Gtk.MessageType.QUESTION,  Gtk.ButtonsType.YES_NO, "Сейчас будет выполнена первоначальная настройка сервера OpenVPN")
         dialog.format_secondary_text("Эта операция может занять несколько минут. Для подтверждения нажмите кнопку \"Да\"")
         response = dialog.run()
@@ -48,13 +47,37 @@ class GUI_glade():
         port = entry_2.get_text()
         entry_3 = self.builder.get_object("entry_proto")
         proto = entry_3.get_text()
-        if out_ip and port and proto:
-            lists = serv.server_config_file(port, proto)
-            serv.write_conf_serv (lists, out_ip, port, proto)
-            window.destroy()
+        entry_4 = self.builder.get_object("entry_ip")
+        ip = entry_4.get_text()
+        entry_5 = self.builder.get_object("entry_mask")
+        mask = entry_5.get_text()
+        checkbutton_route = self.builder.get_object("checkbutton_route")
+        if checkbutton_route.get_active():
+            if out_ip and port and proto and ip and mask:
+                lists = serv.server_config_file(port, proto, ip, mask)
+                serv.write_conf_serv (lists, out_ip, port, proto)
+                window.destroy()
+            else:
+                self.window_dialog_error(window)
         else:
-            self.window_dialog_error(window) 
+            if out_ip and port and proto:
+                lists = serv.server_config_file(port, proto)
+                serv.write_conf_serv (lists, out_ip, port, proto)
+                window.destroy()
+            else:
+                self.window_dialog_error(window)
 
+    def on_checkbutton_route (self, *args):
+        checkbutton_route = self.builder.get_object("checkbutton_route")
+        entry_ip = self.builder.get_object("entry_ip")
+        entry_mask = self.builder.get_object("entry_mask")
+        if checkbutton_route.get_active():
+            entry_ip.set_sensitive(True)
+            entry_mask.set_sensitive(True)
+        else:
+            entry_ip.set_sensitive(False)
+            entry_mask.set_sensitive(False)
+        
     def window_serv_conf_close (self, window, *args):
         window.destroy()
     
@@ -115,6 +138,7 @@ class GUI_glade():
             box = self.builder.get_object("box_all_clients")
             client = Gtk.CheckButton (label = lists[i])
             client.set_active(True)
+            client.set_margin_left(20)
             client.connect("toggled", self.window_revoke_cert_view, lists[i])
             box.pack_start(client, True, True, 0)
 
@@ -210,8 +234,8 @@ class GUI_glade():
         dialog_error.run()
         dialog_error.destroy()
 
-    #~ def configuring_clients(self, *args):
-        #~ webbrowser.open_new_tab("web_faq/index.html")
+    def configuring_clients(self, *args):
+        webbrowser.open_new_tab("web_faq/index.html")
 
 def _main():
     gtk_gui = GUI_glade()

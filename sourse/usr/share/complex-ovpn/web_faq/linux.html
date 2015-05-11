@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Complex Config OpenVPN</title>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+		<section id="body" class="width">
+			<aside id="sidebar">
+
+			<header>
+				<h1><a href="#">Конфигуратор OpenVPN</a></h1>
+
+				<h2>Complex Config OpenVPN</h2>
+				
+			</header>
+
+			<nav id="mainnav">
+  				<ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="windows.html">Настройка клиента на Windows</a></li>
+                    <li class="selected-item"><a href="linux.html">Настройка клиента на Linux</a></li>
+                    <li><a href="macos.html">Настройка клиента на MacOS</a></li>
+                    <li><a href="management.html">Менеджмент подключенных клиентов</a></li>
+                </ul>
+			</nav>
+
+			
+			
+			</aside>
+			<section id="content">
+                		
+	    <article>
+				
+			
+        <h2>Настройка клиента на Linux</h2><br><br>
+            <p>Для настройки OpenVPN-клиента должен быть архив, в котором находятся 4 файла: сертификат CA, ключ и сертификат пользователя OpenVPN и конфигурационный файл.</p>
+            <center><img src="img/101.png" width="550px"></center><br>
+            <p>Распакуйте этот архив в каталог <strong>/etc/openvpn</strong></p>
+            <center><img src="img/105.png" width="600px"></center><br>
+            <p>Запустите службу OpenVpn - <strong>sudo service openvpn start</strong></p>
+            <center><img src="img/102.png" width="550px"></center><br>
+            <p>После запуска службы OpenVPN, в списке устройств должен появиться новый сетевой адаптер <strong>tap</strong></p>
+            <center><img src="img/103.png" width="450px"></center><br>
+            <p>Для проверки соединения с OpenVPN-сервером можно воспользоваться командой <strong>ping 10.8.0.1</strong></p>
+            <center><img src="img/104.png" width="450px"></center><br>
+            <p>Также, убедиться в установлении соединения с сервером можно посмотрев файл <strong>/etc/openvpn/openvpn.log</strong></p><br><br>
+            <p>Связь с разработчиком: <strong>alexkopiev@mail.ru</strong></p>
+
+
+		</article>
+        <br><br><br><br>
+			<footer class="clear">
+				<p>&copy;Alexandr Kopev 2015. <a href="https://github.com/alexkopev/complex-ovpn">The developer's page </a> </p>
+			</footer>
+
+		</section>
+
+		<div class="clear"></div>
+
+	</section>
+	
+
+</body>
+</html>

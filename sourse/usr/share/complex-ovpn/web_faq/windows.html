@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Complex Config OpenVPN</title>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+		<section id="body" class="width">
+			<aside id="sidebar">
+
+			<header>
+				<h1><a href="#">Конфигуратор OpenVPN</a></h1>
+
+				<h2>Complex Config OpenVPN</h2>
+				
+			</header>
+
+			<nav id="mainnav">
+  				<ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="selected-item"><a href="windows.html">Настройка клиента на Windows</a></li>
+                    <li><a href="linux.html">Настройка клиента на Linux</a></li>
+                    <li><a href="macos.html">Настройка клиента на MacOS</a></li>
+                    <li><a href="management.html">Менеджмент подключенных клиентов</a></li>
+                </ul>
+			</nav>
+
+			
+			
+			</aside>
+			<section id="content">
+                		
+	    <article>
+				
+			
+        <h2>Настройка клиента на Windows</h2><br><br>
+            <p>Для настройки OpenVPN-клиента должен быть архив, в котором находятся 4 файла: сертификат CA, ключ и сертификат пользователя OpenVPN и конфигурационный файл.</p>
+            <p>Скачайте и установите приложение по ссылке <a href="http://swupdate.openvpn.org/community/releases/openvpn-install-2.3.6-I603-i686.exe">OpenVPN</a></p>
+            <p>Распакуйте архив с конфигурационными файлами в <strong>C:\Program Files\OpenVPN\config</strong></p>
+            <center><img src="img/201.png" width="650px"></center><br>
+            <p>Зайдите в Пуск - > Администрирование - > Службы (Локальные). В списке найдите службу "OpenVPN Service" и запустите ее.</p>
+            <center><img src="img/202.png" width="750px"></center><br>
+            <p>Убедитесь в том, что в списке сетевых подключений появился новый виртуальный адаптер - TAP</p>
+            <center><img src="img/203.png" width="550px"></center><br>
+            <p>Для проверки соединения с OpenVPN-сервером можно воспользоваться командой <strong>ping 10.8.0.1</strong></p>
+            <p>Также, убедиться в установлении соединения с сервером можно посмотрев файл <strong>C:\Program Files\OpenVPN\config\openvpn.log</strong></p><br>
+            <p>Связь с разработчиком: <strong>alexkopiev@mail.ru</strong></p>
+
+
+		</article>
+        <br><br><br><br>
+			<footer class="clear">
+				<p>&copy;Alexandr Kopev 2015. <a href="https://github.com/alexkopev/complex-ovpn">The developer's page </a> </p>
+			</footer>
+
+		</section>
+
+		<div class="clear"></div>
+
+	</section>
+	
+
+</body>
+</html>
