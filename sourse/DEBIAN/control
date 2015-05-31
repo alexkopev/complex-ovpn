@@ -1,5 +1,5 @@
 Package: complex-ovpn
-Version: 1.0.1
+Version: 1.0.3
 Provides: complex-ovpn
 Description: Комплексная система для построения VPN сетей в гетерогенных средах.
  На базе OpenVPN.

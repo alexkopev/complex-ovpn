@@ -146,7 +146,7 @@
           <object class="GtkLabel" id="label2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Введите имя нового клиента в английской раскладке</property>
+            <property name="label" translatable="yes">Введите имя нового клиента (на английской раскладке)</property>
             <property name="justify">center</property>
             <property name="angle">0.089999999999999997</property>
           </object>

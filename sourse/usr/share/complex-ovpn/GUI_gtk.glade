@@ -85,7 +85,7 @@ PayPal - alexkopiev@mail.ru
               <object class="GtkMenuItem" id="menuitem1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">_Сервер OpenVpn</property>
+                <property name="label" translatable="yes">_Сервер OpenVPN</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="menu1">
@@ -95,7 +95,7 @@ PayPal - alexkopiev@mail.ru
                       <object class="GtkMenuItem" id="menuitem4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">_Парамметры организации</property>
+                        <property name="label" translatable="yes">_Параметры организации</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="window_serv_param_view" swapped="no"/>
                       </object>
@@ -387,7 +387,7 @@ PayPal - alexkopiev@mail.ru
         </child>
         <child>
           <object class="GtkCheckButton" id="checkbutton_route">
-            <property name="label" translatable="yes">Маршруты в сеть за сервером</property>
+            <property name="label" translatable="yes">Маршрут в сеть за сервером</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">False</property>
@@ -414,7 +414,7 @@ PayPal - alexkopiev@mail.ru
   </object>
   <object class="GtkWindow" id="window_serv_param">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">Парамметры организации</property>
+    <property name="title" translatable="yes">Параметры организации</property>
     <property name="modal">True</property>
     <property name="window_position">center</property>
     <property name="default_width">460</property>
@@ -619,7 +619,7 @@ PayPal - alexkopiev@mail.ru
         </child>
         <child>
           <object class="GtkButton" id="button3">
-            <property name="label" translatable="yes">Сохранить парамметры</property>
+            <property name="label" translatable="yes">Сохранить параметры</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>

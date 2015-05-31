@@ -31,6 +31,7 @@ class GUI_glade():
 
     def create_keys_server (self, window, *args):       #Создание ключей сервера
         dialog = Gtk.MessageDialog(window, 0, Gtk.MessageType.QUESTION,  Gtk.ButtonsType.YES_NO, "Сейчас будет выполнена первоначальная настройка сервера OpenVPN")
+        dialog.set_title("Предупреждение")
         dialog.format_secondary_text("Эта операция может занять несколько минут. Для подтверждения нажмите кнопку \"Да\"")
         response = dialog.run()
         if response == Gtk.ResponseType.YES:
